@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    body {
+        padding: 12px;
+    }
+
+    .all {
+        display: flex;
+        gap: 12px;
+    }
+</style>
+
+<body>
+    <h1>Grading</h1>
+    <div class="all">
+        <div>
+            <p> excellent</p>
+            <p> very good</p>
+            <p> good</p>
+            <p> pass</p>
+            <p>fail</p>
+        </div>
+        <div>
+            <p>A</p>
+            <p>B</p>
+            <p>C</p>
+            <p>D</p>
+            <p>F</p>
+        </div>
+    </div>
+
+    <input type="number" id="inputs">
+    <button onclick="check()">check</button>
+    <h1 id="show"></h1>
+
+</body>
+
+</html>
+<script>
+    let Inputs = document.getElementById("inputs")
+
+    let show = document.getElementById("show")
+
+
+
+
+    function check() {
+        if (Inputs.value.trim() === '') {
+            alert('Input is mandatory')
+        }
+        else if (Inputs.value >= 80 && Inputs.value <= 100) {
+            show.innerHTML = "Excellent"
+        }
+        else if (Inputs.value >= 65 && Inputs.value <= 79) {
+            show.innerHTML = 'Very good'
+        }
+        else if (Inputs.value >= 50 && Inputs.value <= 64) {
+            show.innerHTML = 'good'
+        }
+        else if (Inputs.value >= 45 && Inputs.value <= 49) {
+            show.innerHTML = 'Pass'
+        }
+        else if (Inputs.value <= 39) {
+            show.innerHTML = 'Fail'
+        }
+        else {
+            show.innerHTML = 'Invalid Number'
+        }
+    }
+
+    console.log(inputs.value);
+    console.log(show.innerHTML);
+
+
+    
+
+
+
+</script>

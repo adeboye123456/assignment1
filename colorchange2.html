@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="color">backgroundColor</h1>
+    <button onclick="change()">change</button>
+</body>
+
+</html>
+
+<script>
+    document.body.style.backgroundColor = "white"
+    let obj = [
+        "red",
+        "orange",
+        "purple",
+        "green",
+        "yellow",
+        "pink",
+    ]
+
+    let index = 0
+    function change() {
+        console.log(index);
+        let truecolor = obj[index]
+        index += 1
+        if (index >= obj.length) {
+            index = 0
+        }
+        console.log(truecolor);
+
+
+
+
+
+
+        document.body.style.backgroundColor = truecolor
+    }
+</script>
