@@ -31,7 +31,8 @@
 
 
     }
-    .inp img{
+
+    .inp img {
         width: 20px;
     }
 
@@ -46,24 +47,35 @@
         <h1>Sign up</h1>
         <form class="email">
             <div class="mb-3">
-                <input type="text" name="" id="" placeholder=" Username">
+                <label for="username">username</label>
+                <input required type="text" name="" id="username" placeholder=" Username">
             </div>
             <div class="mb-3">
-                <input type="text" name="" id="" placeholder=" Email">
+                <label for="Email">Email</label>
+                <input type="email" name="" id="email" placeholder=" Email">
             </div>
             <div class="mb-3">
-                <input type="text" name="" id="" placeholder="Age">
+                <label for="age">Age</label>
+                <input type="number" name="" id="age" placeholder="Age">
             </div>
+            <label for="password">Password</label>
             <div class="mb-3 d-flex inp">
+
                 <input class="border-0" type="password" name="" id="password" placeholder="Password">
                 <img src="visibility-off.png" alt="" id="eyeicon">
 
             </div>
+            <label for="comfirm password">Comfirm password</label>
             <div class="mb-3 d-flex inp">
+
                 <input class="border-0" type="password" name="" id="password1" placeholder="comfirm password">
-               <img src="visibility-off.png" alt="" id="eyeicon1">
+                <img src="visibility-off.png" alt="" id="eyeicon1">
                 </span>
             </div>
+            <div>
+                <button type="submit" onclick="signup()">SIGN UP</button>
+            </div>
+            <a href="login.html">login</a>
 
         </form>
     </div>
@@ -71,30 +83,59 @@
 
 </html>
 <script>
+
+
+
+
+
     let eyeicon = document.getElementById("eyeicon");
     let password = document.getElementById("password");
 
-    eyeicon.onclick = function() {
-        if (password.type == "password" ) {
+
+    eyeicon.onclick = function () {
+        if (password.type == "password") {
             password.type = "text"
-            eyeicon.src = "visibility-off.png"
-        }else{
-            password.type = "password"
             eyeicon.src = "visibility-on.png"
+        } else {
+            password.type = "password"
+            eyeicon.src = "visibility-off.png"
         }
 
     }
     let eyeicon1 = document.getElementById("eyeicon1");
     let password1 = document.getElementById("password1");
 
-    eyeicon1.onclick = function() {
-        if (password1.type == "password" ) {
+    eyeicon1.onclick = function () {
+        if (password1.type == "password") {
             password1.type = "text"
-            eyeicon1.src = "visibility-off.png"
-        }else{
-            password1.type = "password"
             eyeicon1.src = "visibility-on.png"
+        } else {
+            password1.type = "password"
+            eyeicon1.src = "visibility-off.png"
         }
 
     }
+
+    let username = document.getElementById("username")
+    let email = document.getElementById("email")
+    let age = document.getElementById("age")
+    // let signup = document.getElementById("signup")
+
+
+    function signup() {
+        if (username.value.trim() === "" || email.value.trim() === "" || age.value.trim() === "" || password.value.trim() === "" || password1.value.trim() === "") {
+            alert("input is mandatory")
+        } else if (age.value < 18) {
+            alert("you are not up to 18")
+        }
+        else if (password.value != password1.value) {
+            alert("password and comfirm password are not the same")
+        }
+        else{
+            alert("signup successful")
+           window.location.href = "login.html"
+        }
+    }
+
+
 </script>
